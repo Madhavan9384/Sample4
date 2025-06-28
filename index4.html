@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fitness Tracker Dashboard</title>
+  <style>
+    body {
+      margin:0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background:#f4f6f9;
+      color:#333;
+    }
+    .sidebar {
+      width:220px;
+      background:#fff;
+      height:100vh;
+      position:fixed;
+      padding:20px;
+      box-shadow:2px 0 5px rgba(0,0,0,0.1);
+    }
+    .sidebar h2 {
+      font-size:18px;
+      margin-bottom:20px;
+    }
+    .sidebar ul {
+      list-style:none;
+      padding:0;
+    }
+    .sidebar ul li {
+      margin:15px 0;
+    }
+    .sidebar ul li a {
+      text-decoration:none;
+      color:#333;
+      font-size:14px;
+    }
+    .main {
+      margin-left:240px;
+      padding:20px;
+    }
+    .profile {
+      display:flex;
+      align-items:center;
+      background:#fff;
+      padding:15px;
+      border-radius:8px;
+      margin-bottom:20px;
+    }
+    .profile img {
+      width:50px;
+      height:50px;
+      border-radius:50%;
+      margin-right:15px;
+    }
+    .cards {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:15px;
+    }
+    .card {
+      background:#fff;
+      padding:15px;
+      border-radius:8px;
+      box-shadow:0 2px 5px rgba(0,0,0,0.1);
+    }
+    .card h3 {
+      margin:10px 0;
+    }
+    .progress {
+      background:#eee;
+      border-radius:20px;
+      overflow:hidden;
+      height:10px;
+    }
+    .progress-bar {
+      height:10px;
+      background:#4caf50;
+      width:50%;
+    }
+    .chart-placeholder {
+      height:200px;
+      background:linear-gradient(135deg,#e0e0e0,#f9f9f9);
+      border-radius:8px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#aaa;
+      font-size:14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Track Fitness</h2>
+    <ul>
+      <li><a href="#">🏠 Dashboard</a></li>
+      <li><a href="#">🎯 My Goals</a></li>
+      <li><a href="#">🗓 Schedule</a></li>
+      <li><a href="#">🏆 Achievements</a></li>
+      <li><a href="#">📊 Statistics</a></li>
+      <li><a href="#">⚙️ Settings</a></li>
+    </ul>
+  </div>
+  <div class="main">
+    <div class="profile">
+      <img src="https://via.placeholder.com/50" alt="User">
+      <div>
+        <h3>Richard Jones</h3>
+        <p>Male, 28 years • Height: 185 cm • Weight: 76 kg</p>
+      </div>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <h3>Steps</h3>
+        <p>2,500 steps</p>
+        <div class="progress"><div class="progress-bar" style="width:50%;"></div></div>
+      </div>
+      <div class="card">
+        <h3>Water Intake</h3>
+        <p>1.0 L</p>
+        <div class="progress"><div class="progress-bar" style="width:25%;background:#2196f3;"></div></div>
+      </div>
+      <div class="card">
+        <h3>Calories Burned</h3>
+        <p>450 kcal</p>
+        <div class="progress"><div class="progress-bar" style="width:60%;background:#f44336;"></div></div>
+      </div>
+      <div class="card">
+        <h3>Heart Rate</h3>
+        <p>110 bpm</p>
+        <div class="progress"><div class="progress-bar" style="width:70%;background:#9c27b0;"></div></div>
+      </div>
+    </div>
+    <h3 style="margin-top:30px;">Monthly Progress</h3>
+    <div class="chart-placeholder">[Chart Placeholder]</div>
+  </div>
+  <script>
+    // Example: dynamic progress update
+    document.querySelectorAll('.progress-bar').forEach(bar=>{
+      const randomWidth = Math.floor(Math.random()*80+10);
+      bar.style.width = randomWidth+"%";
+    });
+  </script>
+</body>
+</html>
